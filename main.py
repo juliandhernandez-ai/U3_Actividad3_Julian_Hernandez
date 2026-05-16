@@ -42,7 +42,7 @@ def generar_datos_falsos(cantidad=100000):
 def definir_tabla(metadata):
     """Define la estructura de la tabla personas_julian """
     return Table(
-        'personas_julian', # Asegúrate de usar el formato personas_julian 
+        'personas_julian_hernandez_grisales', # Asegúrate de usar el formato personas_julian 
         metadata,
         Column('id', Integer, primary_key=True, autoincrement=True),
         Column('nombre', String(100)),
