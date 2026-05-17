@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine, Column, Integer, String, Date, Float, MetaData, Table
 from faker import Faker
 
-# 1. CARGA DE CONFIGURACIÓN 🔐
+# 1. CARGA DE CONFIGURACIÓN 
 # Cargamos las variables del archivo .env para proteger nuestras credenciales[cite: 41, 42].
 load_dotenv()
 
@@ -19,7 +19,7 @@ def obtener_engine():
     url = f"mysql+pymysql://{user}:{password}@{host}:{port}/{db}"
     return create_engine(url)
 
-# 2. LA FÁBRICA DE DATOS (FAKER) 🏭
+# 2. LA FÁBRICA DE DATOS (FAKER) 
 def generar_datos_falsos(cantidad=100000):
     """Genera una lista de diccionarios con datos realistas."""
     fake = Faker('es_CO') # Configurado para Colombia
@@ -38,7 +38,7 @@ def generar_datos_falsos(cantidad=100000):
         datos.append(registro) # Guardamos en una lista para inserción masiva 
     return datos
 
-# 3. EL PLANO DE LA TABLA (METADATA) 🏗️
+# 3. EL PLANO DE LA TABLA (METADATA) 
 def definir_tabla(metadata):
     """Define la estructura de la tabla personas_julian """
     return Table(
@@ -54,7 +54,7 @@ def definir_tabla(metadata):
         Column('empleo', String(150))
     )
 
-# 4. FUNCIÓN PRINCIPAL 🤖
+# 4. FUNCIÓN PRINCIPAL 
 def main():
     
     # Inicializamos la conexión y el catálogo de metadatos
